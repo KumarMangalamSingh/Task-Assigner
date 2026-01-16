@@ -1,22 +1,22 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from '../Other/Header'
 import TaskListno from '../Other/TaskListno'
 import TaskList from '../TaskList/TaskList'
-import { setLocalStorage } from '../../utils/localStorage'
+import { setLocalStorage,getLocalStorage } from '../../utils/localStorage'
 
-function Employee() {
-
+function Employee({handelLogout,data}) {
+ 
   useEffect(()=>{
 setLocalStorage()
-console.log(setLocalStorage());
   })
+  
   return (
     <div className='p-10 bg-[#1C1C1C] h-screen' >
-      <Header/>
-      <TaskListno/>
-      <TaskList/>
+    <Header handelLogout={handelLogout} data={data} />
+      <TaskListno data={data}/>
+      <TaskList data={data}/>
     </div>
-  )
+  ) 
 }
 
 export default Employee

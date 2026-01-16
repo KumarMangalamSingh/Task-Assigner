@@ -1,37 +1,29 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import {AuthContext} from '../../context/AuthProvider'
 
 function AllTasks() {
+  const [userData,setUserData]= useContext(AuthContext)
+  
   return (
-    <div className='bg-[#1c1c1c] p-5 mt-5 rounded h-48 overflow-auto'>
-      <div className='bg-red-400 py-2 px-4 flex justify-between rounded'>
-        <h2>MANGALAM </h2>
-        <h2>Make a UI Design </h2>
-        <h4>Status</h4>
+    <div className='bg-[#1c1c1c] p-5 mt-5 rounded  overflow-auto'>
+      <div className='bg-blue-500 mb-2 py-2 px-4 flex justify-between rounded'>
+        <h2 className='w-1/5 '>Employee Name</h2>
+        <h2 className='w-1/5 '>New Task</h2>
+        <h2 className='w-1/5 '>Active Task</h2>
+        <h2 className='w-1/5 '>Completed</h2>
+        <h2 className='w-1/5'>Failed</h2>
       </div>
-
-      <div className='bg-red-400 py-2 px-4 flex justify-between rounded mt-2'>
-        <h2>MANGALAM </h2>
-        <h2>Make a UI Design </h2>
-        <h4>Status</h4>
+      {userData.map(function(elem,key){
+        return  <div key={key} className=' border-2 border-blue-300 mb-2 py-2 px-4 flex justify-between rounded'>
+        <h2 className='text-lg font-medium w-1/5 '>{elem.name}</h2>
+        <h2 className='text-lg  font-medium w-1/5 '>{elem.taskCounts.newTask}</h2>
+        <h2 className='text-lg font-medium w-1/5 '>{elem.taskCounts.active}</h2>
+        <h2 className='text-lg font-medium w-1/5 '>{elem.taskCounts.completed}</h2>
+        <h2 className='text-lg font-medium w-1/5 '>{elem.taskCounts.failed}</h2>
+        
       </div>
-
-      <div className='bg-yellow-600 py-2 px-4 flex justify-between rounded mt-2'>
-        <h2>MANGALAM </h2>
-        <h2>Make a UI Design </h2>
-        <h4>Status</h4>
-      </div>
-
-      <div className='bg-green-600 py-2 px-4 flex justify-between rounded mt-2'>
-        <h2>MANGALAM </h2>
-        <h2>Make a UI Design </h2>
-        <h4>Status</h4>
-      </div>
-
-      <div className='bg-blue-500 py-2 px-4 flex justify-between rounded mt-2'>
-        <h2>MANGALAM </h2>
-        <h2>Make a UI Design </h2>
-        <h4>Status</h4>
-      </div>
+      })}
+     
     </div>
   )
 }
