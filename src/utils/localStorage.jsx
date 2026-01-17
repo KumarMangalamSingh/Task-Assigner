@@ -6,7 +6,7 @@ const employees = [
     email: "employee1@example.com",
     password: "123",
     "taskCounts":{
-     "active":2,
+     "active":1,
      "newTask":2,
      "completed":2,
      "failed":0
@@ -57,7 +57,7 @@ const employees = [
         taskDescription: "Refresh dashboards with updated values.",
         taskDate: "2025-11-11",
         category: "Analytics",
-        active: true,
+        active: false,
         newTask: true,
         completed: false,
         failed: false
