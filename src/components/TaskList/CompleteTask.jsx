@@ -9,7 +9,7 @@ function CompleteTask({data}) {
         </div>
         <h2 className='mt-5 text-2xl font-semibold'>{data.taskTitle}</h2>
         <p className='text-sm mt-2 '> {data.taskDescription} </p>
-        <button className='bg-red-500 text-sm text-white px-2 py-1  rounded-b-sm cursor-pointer hover:bg-red-400'>Mark as Failed</button>
+        {/* <button className='bg-red-500 text-sm text-white px-2 py-1  rounded-b-sm cursor-pointer hover:bg-red-400'>Mark as Failed</button> */}
         </div> 
   )
 }

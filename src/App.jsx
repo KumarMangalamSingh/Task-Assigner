@@ -45,7 +45,9 @@ function App() {
       {!user ? (
         <Login handelLogin={handelLogin} />
       ) : user === "Admin" ? (
-        <Admin handelLogout={handelLogout} />
+        <Admin handelLogout={handelLogout} data={Userdata
+        
+        } />
       ) : (
         <Employee handelLogout={handelLogout}  data={Userdata}/>
       )}
